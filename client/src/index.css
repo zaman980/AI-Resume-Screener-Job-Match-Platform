@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Visible keyboard focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid #2d6a4f;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-signal disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-ink/15 bg-surface px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink/40 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .input-field {
+    @apply w-full rounded-md border border-ink/15 bg-surface px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-light/60 focus:border-signal;
+  }
+  .card {
+    @apply rounded-xl border border-ink/10 bg-surface p-6 shadow-sm;
+  }
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-widest text-ink-light;
+  }
+}
